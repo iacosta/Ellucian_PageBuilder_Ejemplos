@@ -1,0 +1,94 @@
+{
+   "constantName": "IA_responsive_tabs",
+   "extendsPage": null,
+   "fileTimestamp": "2019-07-22T22:52:35Z",
+   "modelView": {
+      "components": [
+         {
+            "components": [
+               {
+                  "name": "navTabs",
+                  "style": "hidden-xs",
+                  "type": "literal",
+                  "value": "<ul class=\"nav nav-tabs\" id=\"myTab\" role=\"tablist\">\n    <li class=\"nav-item\">\n        <a class=\"nav-link\" id=\"tab1-tab\" data-toggle=\"tab\" href=\"#pbid-tab1Block\" role=\"tab\">Tabulador 1</a>\n    </li>\n    <li class=\"nav-item\">\n        <a class=\"nav-link\" id=\"tab2-tab\" data-toggle=\"tab\" href=\"#pbid-tab2Block\" role=\"tab\">Tabulador 2</a>\n    </li>\n\t<li class=\"nav-item\">\n        <a class=\"nav-link\" id=\"tab3-tab\" data-toggle=\"tab\" href=\"#pbid-tab3Block\" role=\"tab\">Tabulador 3</a>\n    </li>\n</ul>"
+               },
+               {
+                  "name": "dropdown",
+                  "style": "visible-xs",
+                  "type": "literal",
+                  "value": "<nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar-collapse-1\" aria-expanded=\"false\">\n                <span class=\"sr-only\">Toggle navigation</span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n            </button>\n            <a class=\"navbar-brand\" href=\"#\">Tabs to Button demo</a>\n        </div>\n\n        <div class=\"collapse navbar-collapse\" id=\"navbar-collapse-1\">\n\n            <ul class=\"nav nav-bar\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"tab1-tab\" data-toggle=\"tab\" href=\"#pbid-tab1Block\" role=\"tab\">Tab1</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"tab2-tab\" data-toggle=\"tab\" href=\"#pbid-tab1Block\" role=\"tab\">Tab2</a>\n                </li>\n\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t<a class=\"nav-link\" id=\"tab3-tab\" data-toggle=\"tab\" href=\"#pbid-tab1Block\" role=\"tab\">Tab3</a>\n\t\t\t\t</li>\n            </ul>\n\n        </div>\n        <!-- /.navbar-collapse -->\n    </div>\n    <!-- /.container-fluid -->\n</nav>\n\n<script>\n    $('.nav-item a').on('click', function () {\n        $('.navbar-toggle:not(.collapsed)').click();\n    });\n</script>"
+               },
+               {
+                  "components": [
+                     {
+                        "components": [
+                           {
+                              "asHtml": false,
+                              "loadInitially": true,
+                              "name": "tab1Block_child_1",
+                              "type": "display",
+                              "value": "Contenido",
+                              "valueStyle": ""
+                           }
+                        ],
+                        "label": "",
+                        "name": "tab1Block",
+                        "showInitially": true,
+                        "style": "tab-pane",
+                        "type": "block"
+                     },
+                     {
+                        "components": [
+                           {
+                              "asHtml": false,
+                              "loadInitially": true,
+                              "name": "tab2Block_child_1",
+                              "type": "display",
+                              "value": "Contenido"
+                           }
+                        ],
+                        "label": "",
+                        "name": "tab2Block",
+                        "showInitially": true,
+                        "style": "tab-pane",
+                        "type": "block"
+                     },
+                     {
+                        "components": [
+                           {
+                              "asHtml": false,
+                              "loadInitially": true,
+                              "name": "tab3Block_child_1",
+                              "type": "display",
+                              "value": "Contenido"
+                           }
+                        ],
+                        "name": "tab3Block",
+                        "showInitially": true,
+                        "style": "tab-pane",
+                        "type": "block"
+                     }
+                  ],
+                  "name": "tabContent",
+                  "showInitially": true,
+                  "style": "tab-content",
+                  "type": "block"
+               }
+            ],
+            "name": "tabs",
+            "showInitially": true,
+            "style": "tab-content",
+            "type": "block"
+         }
+      ],
+      "importCSS": "",
+      "name": "IAResponsiveTabs",
+      "type": "page"
+   },
+   "pageRoles": [
+      {
+         "roleName": "ALLROLES",
+         "allow": true
+      }
+   ]
+}

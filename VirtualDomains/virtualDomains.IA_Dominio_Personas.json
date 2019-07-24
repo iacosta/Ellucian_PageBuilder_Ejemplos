@@ -1,0 +1,18 @@
+{
+   "codePut": null,
+   "codeDelete": null,
+   "virtualDomainRoles": [
+      {
+         "allowDelete": false,
+         "allowPost": false,
+         "allowPut": false,
+         "roleName": "ALLROLES",
+         "allowGet": true
+      }
+   ],
+   "codeGet": "select spriden_pidm, spriden_id, spriden_first_name, spriden_last_name\r\nfrom spriden \r\nwhere spriden_change_ind is null\r\nand spriden_id = nvl(:idparam,spriden_id)\r\norder by spriden_pidm",
+   "typeOfCode": "S",
+   "fileTimestamp": null,
+   "serviceName": "IA_Dominio_Personas",
+   "codePost": null
+}

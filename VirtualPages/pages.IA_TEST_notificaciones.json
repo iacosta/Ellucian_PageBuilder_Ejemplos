@@ -1,0 +1,64 @@
+{
+   "constantName": "IA_TEST_notificaciones",
+   "extendsPage": null,
+   "fileTimestamp": "2019-07-22T22:52:35Z",
+   "modelView": {
+      "components": [
+         {
+            "components": [
+               {
+                  "label": "Notificacion",
+                  "name": "notification",
+                  "onClick": "alert('Notificación')",
+                  "style": "",
+                  "type": "button",
+                  "valueStyle": "btn"
+               },
+               {
+                  "label": "Notificacion Flash",
+                  "name": "notification_flash",
+                  "onClick": "alert('Success flash', {type: 'success', flash: true})",
+                  "style": "",
+                  "type": "button",
+                  "valueStyle": "btn"
+               },
+               {
+                  "label": "Info",
+                  "name": "info",
+                  "onClick": "alert('Texto Info', {type:\"info\",flash: true})",
+                  "style": "",
+                  "type": "button",
+                  "valueStyle": "btn"
+               },
+               {
+                  "label": "Error",
+                  "name": "error",
+                  "onClick": "alert('Error', {type:\"error\",flash: false})",
+                  "type": "button",
+                  "valueStyle": "btn"
+               },
+               {
+                  "label": "Advertencia",
+                  "name": "Advertencia",
+                  "onClick": "alert('Advertencia', {type:\"warning\",flash: false})",
+                  "type": "button",
+                  "valueStyle": "btn"
+               }
+            ],
+            "documentation": "",
+            "label": "Notificaciones Demo",
+            "name": "buttonsBlock",
+            "showInitially": true,
+            "type": "block"
+         }
+      ],
+      "name": "IA_TEST_Notificaciones",
+      "type": "page"
+   },
+   "pageRoles": [
+      {
+         "roleName": "ALLROLES",
+         "allow": true
+      }
+   ]
+}

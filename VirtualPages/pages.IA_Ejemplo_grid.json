@@ -1,0 +1,67 @@
+{
+   "constantName": "IA_Ejemplo_grid",
+   "extendsPage": null,
+   "fileTimestamp": "2019-07-22T22:52:35Z",
+   "modelView": {
+      "components": [
+         {
+            "name": "people",
+            "resource": "virtualDomains.conf2019_spriden",
+            "staticData": [],
+            "type": "resource"
+         },
+         {
+            "allowDelete": false,
+            "allowModify": true,
+            "allowNew": false,
+            "allowReload": false,
+            "components": [
+               {
+                  "label": "ID de Persona",
+                  "loadInitially": true,
+                  "model": "SPRIDEN_ID",
+                  "name": "id_student",
+                  "parameters": {},
+                  "readonly": false,
+                  "required": false,
+                  "type": "text",
+                  "validation": {}
+               },
+               {
+                  "label": "Primer Nombre",
+                  "loadInitially": true,
+                  "model": "SPRIDEN_FIRST_NAME",
+                  "name": "first_name",
+                  "parameters": {},
+                  "readonly": false,
+                  "required": false,
+                  "type": "text",
+                  "validation": {}
+               },
+               {
+                  "label": "Apellidos",
+                  "loadInitially": true,
+                  "model": "SPRIDEN_LAST_NAME",
+                  "name": "last_name",
+                  "parameters": {},
+                  "readonly": false,
+                  "required": false,
+                  "type": "text",
+                  "validation": {}
+               }
+            ],
+            "label": "Page Simple (Grid)",
+            "loadInitially": true,
+            "model": "people",
+            "name": "IA_Test_Grid_child_2",
+            "pageSize": 10,
+            "parameters": {},
+            "type": "grid"
+         }
+      ],
+      "name": "IAEjemploGrid",
+      "title": "Page Simple (Grid)",
+      "type": "page"
+   },
+   "pageRoles": []
+}

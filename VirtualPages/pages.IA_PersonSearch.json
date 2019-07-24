@@ -1,0 +1,144 @@
+{
+   "constantName": "IA_PersonSearch",
+   "extendsPage": null,
+   "fileTimestamp": "2019-07-22T22:52:35Z",
+   "modelView": {
+      "components": [
+         {
+            "name": "personSearch1",
+            "resource": "virtualDomains.bcmPersonSearch",
+            "staticData": [],
+            "type": "resource"
+         },
+         {
+            "components": [
+               {
+                  "label": "Banner ID",
+                  "loadInitially": true,
+                  "name": "banner_id_f",
+                  "parameters": {},
+                  "readonly": false,
+                  "required": false,
+                  "style": "columns-2",
+                  "type": "text",
+                  "validation": {},
+                  "value": ""
+               },
+               {
+                  "label": "Last Name",
+                  "loadInitially": true,
+                  "name": "last_name_f",
+                  "parameters": {},
+                  "readonly": false,
+                  "required": false,
+                  "style": "columns-2",
+                  "type": "text",
+                  "validation": {}
+               },
+               {
+                  "label": "Minimum birth date:",
+                  "loadInitially": true,
+                  "name": "birth_date_min_f",
+                  "parameters": {},
+                  "readonly": false,
+                  "required": false,
+                  "style": "columns-2",
+                  "type": "datetime",
+                  "validation": {}
+               },
+               {
+                  "label": "Maximum birth date:",
+                  "loadInitially": true,
+                  "name": "birth_date_max_f",
+                  "parameters": {},
+                  "readonly": false,
+                  "required": false,
+                  "style": "columns-2",
+                  "type": "datetime",
+                  "validation": {}
+               }
+            ],
+            "label": "Search Criteria",
+            "name": "filterForm",
+            "nextButtonLabel": "Next",
+            "showInitially": true,
+            "style": "",
+            "submit": "$searchResults.$load()",
+            "submitLabel": "Apply Filter",
+            "type": "form"
+         },
+         {
+            "components": [
+               {
+                  "allowDelete": false,
+                  "allowModify": false,
+                  "allowNew": false,
+                  "allowReload": false,
+                  "components": [
+                     {
+                        "asHtml": false,
+                        "label": "Banner ID",
+                        "loadInitially": true,
+                        "model": "SPRIDEN_ID",
+                        "name": "SPRIDEN_ID",
+                        "type": "display"
+                     },
+                     {
+                        "asHtml": false,
+                        "label": "Last Name",
+                        "loadInitially": true,
+                        "model": "SPRIDEN_LAST_NAME",
+                        "name": "SPRIDEN_LAST_NAME",
+                        "type": "display"
+                     },
+                     {
+                        "asHtml": false,
+                        "label": "First Name",
+                        "loadInitially": true,
+                        "model": "SPRIDEN_FIRST_NAME",
+                        "name": "SPRIDEN_FIRST_NAME",
+                        "type": "display"
+                     },
+                     {
+                        "label": "Birth Date",
+                        "loadInitially": true,
+                        "model": "SPBPERS_BIRTH_DATE",
+                        "name": "SPBPERS_BIRTH_DATE",
+                        "parameters": {},
+                        "required": false,
+                        "type": "datetime"
+                     },
+                     {
+                        "label": "Exclude",
+                        "loadInitially": true,
+                        "name": "EXCLUDE_PERSON",
+                        "readonly": false,
+                        "type": "boolean"
+                     }
+                  ],
+                  "label": "Matching people",
+                  "loadInitially": false,
+                  "model": "personSearch1",
+                  "name": "searchResults",
+                  "pageSize": 10,
+                  "parameters": {
+                     "spbpers_birth_date_max": "$birth_date_max_f",
+                     "spbpers_birth_date_min": "$birth_date_min_f",
+                     "spriden_id": "$banner_id_f",
+                     "spriden_last_name": "$last_name_f"
+                  },
+                  "type": "grid"
+               }
+            ],
+            "name": "searchResultsBlock",
+            "showInitially": true,
+            "type": "block"
+         }
+      ],
+      "name": "IAPersonSearch",
+      "scriptingLanguage": "JavaScript",
+      "title": "Person Search",
+      "type": "page"
+   },
+   "pageRoles": []
+}

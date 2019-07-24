@@ -1,0 +1,18 @@
+{
+   "codePut": "begin\r\ngb_address.p_update(\r\n    p_pidm             => :SPRADDR_PIDM,\r\n    p_atyp_code        => :SPRADDR_ATYP_CODE,\r\n    p_seqno            => :SPRADDR_SEQNO,\r\n    p_status_ind       => :SPRADDR_STATUS_IND,\r\n    p_street_line1     => :SPRADDR_STREET_LINE1,\r\n    p_street_line2     => :SPRADDR_STREET_LINE2,\r\n    p_city             => :SPRADDR_CITY,\r\n    p_zip              => :SPRADDR_ZIP,\r\n    p_natn_code        => :SPRADDR_NATN_CODE);\r\nend;",
+   "codeDelete": null,
+   "virtualDomainRoles": [
+      {
+         "allowDelete": false,
+         "allowPost": true,
+         "allowPut": true,
+         "roleName": "ALLROLES",
+         "allowGet": true
+      }
+   ],
+   "codeGet": "select spraddr_pidm, spraddr_atyp_code, spraddr_seqno, spraddr_status_ind, spraddr_street_line1, spraddr_street_line2, spraddr_city, spraddr_zip, spraddr_natn_code, spraddr_surrogate_id as ID\r\nfrom spraddr\r\nwhere spraddr_pidm = :pidm",
+   "typeOfCode": "S",
+   "fileTimestamp": null,
+   "serviceName": "IA_Domino_Direcciones",
+   "codePost": null
+}

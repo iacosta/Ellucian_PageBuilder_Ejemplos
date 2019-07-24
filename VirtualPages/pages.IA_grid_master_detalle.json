@@ -1,0 +1,158 @@
+{
+   "constantName": "IA_grid_master_detalle",
+   "extendsPage": null,
+   "fileTimestamp": "2019-07-22T22:52:35Z",
+   "modelView": {
+      "components": [
+         {
+            "name": "Personas",
+            "resource": "virtualDomains.IA_Dominio_Personas",
+            "staticData": [],
+            "type": "resource"
+         },
+         {
+            "name": "Direccion",
+            "resource": "virtualDomains.IA_Domino_Direcciones",
+            "staticData": [],
+            "type": "resource"
+         },
+         {
+            "allowDelete": false,
+            "allowModify": true,
+            "allowNew": false,
+            "allowReload": false,
+            "components": [
+               {
+                  "label": "ID Persona",
+                  "loadInitially": true,
+                  "model": "SPRIDEN_ID",
+                  "name": "student_id",
+                  "parameters": {},
+                  "readonly": false,
+                  "required": false,
+                  "type": "text",
+                  "validation": {}
+               },
+               {
+                  "label": "Nombres",
+                  "loadInitially": true,
+                  "model": "SPRIDEN_FIRST_NAME",
+                  "name": "first_name",
+                  "parameters": {},
+                  "readonly": false,
+                  "required": false,
+                  "type": "text",
+                  "validation": {}
+               },
+               {
+                  "label": "Apellidos",
+                  "loadInitially": true,
+                  "model": "SPRIDEN_LAST_NAME",
+                  "name": "last_name",
+                  "parameters": {},
+                  "readonly": false,
+                  "required": false,
+                  "type": "text",
+                  "validation": {}
+               }
+            ],
+            "label": "Grid Maestro / Detalle",
+            "loadInitially": true,
+            "model": "Personas",
+            "name": "persona_grid",
+            "onClick": "$stuId = currentSelection.SPRIDEN_PIDM;\n$address_detail.$load();\n$address_form.$visible=true;",
+            "pageSize": 10,
+            "parameters": {},
+            "type": "grid"
+         },
+         {
+            "components": [
+               {
+                  "allowDelete": false,
+                  "allowModify": true,
+                  "allowNew": true,
+                  "allowReload": false,
+                  "components": [
+                     {
+                        "label": "Linea No.1",
+                        "loadInitially": true,
+                        "model": "SPRADDR_STREET_LINE1",
+                        "name": "line1",
+                        "parameters": {},
+                        "readonly": false,
+                        "required": false,
+                        "type": "text",
+                        "validation": {}
+                     },
+                     {
+                        "label": "Linea No. 2",
+                        "loadInitially": true,
+                        "model": "SPRADDR_STREET_LINE2",
+                        "name": "line2",
+                        "parameters": {},
+                        "readonly": false,
+                        "required": false,
+                        "type": "text",
+                        "validation": {}
+                     },
+                     {
+                        "label": "Ciudad",
+                        "loadInitially": true,
+                        "model": "SPRADDR_CITY",
+                        "name": "city",
+                        "parameters": {},
+                        "readonly": false,
+                        "required": false,
+                        "type": "text",
+                        "validation": {}
+                     },
+                     {
+                        "label": "Codigo Postal",
+                        "loadInitially": true,
+                        "model": "SPRADDR_ZIP",
+                        "name": "postcode",
+                        "parameters": {},
+                        "readonly": false,
+                        "required": false,
+                        "type": "text",
+                        "validation": {}
+                     },
+                     {
+                        "label": "Pais",
+                        "loadInitially": true,
+                        "model": "SPRADDR_NATION",
+                        "name": "nation",
+                        "parameters": {},
+                        "readonly": false,
+                        "required": false,
+                        "type": "text",
+                        "validation": {}
+                     }
+                  ],
+                  "loadInitially": true,
+                  "model": "Direccion",
+                  "name": "address_detail",
+                  "pageSize": 1,
+                  "parameters": {
+                     "pidm": "$stuId"
+                  },
+                  "type": "detail"
+               }
+            ],
+            "name": "address_form",
+            "nextButtonLabel": "Siguiente",
+            "showInitially": false,
+            "type": "form"
+         }
+      ],
+      "name": "IAGridMasterDetalle",
+      "title": "Grid Maestro / Detalle",
+      "type": "page"
+   },
+   "pageRoles": [
+      {
+         "roleName": "ALLROLES",
+         "allow": true
+      }
+   ]
+}

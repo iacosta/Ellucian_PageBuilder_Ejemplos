@@ -1,0 +1,271 @@
+{
+   "constantName": "IA_ModeloPagina1",
+   "extendsPage": null,
+   "fileTimestamp": "2019-07-22T22:52:35Z",
+   "modelView": {
+      "components": [
+         {
+            "name": "Todo",
+            "resource": "todos",
+            "staticData": [],
+            "type": "resource"
+         },
+         {
+            "name": "Dept",
+            "resource": "virtualDomains.department",
+            "staticData": [],
+            "type": "resource"
+         },
+         {
+            "name": "Gender",
+            "staticData": [
+               {
+                  "label": "Female",
+                  "sex": "F"
+               },
+               {
+                  "label": "Unknown",
+                  "sex": "U"
+               },
+               {
+                  "label": "Male",
+                  "sex": "M"
+               }
+            ],
+            "type": "resource"
+         },
+         {
+            "name": "Age",
+            "staticData": [
+               {
+                  "age": "A",
+                  "ageLabel": "Adult"
+               },
+               {
+                  "age": "C",
+                  "ageLabel": "Child"
+               }
+            ],
+            "type": "resource"
+         },
+         {
+            "description": "Link to google",
+            "imageUrl": "",
+            "label": "This is a link",
+            "labelStyle": "myLinkLabelStyle",
+            "name": "showLink",
+            "replaceView": true,
+            "style": "myLinkStyle",
+            "type": "link",
+            "url": "http://google.com",
+            "valueStyle": "myLinkValueStyle"
+         },
+         {
+            "label": "Select Gender",
+            "labelKey": "label",
+            "labelStyle": "mySelectLabelStyle",
+            "loadInitially": true,
+            "name": "showSelect",
+            "required": false,
+            "sourceModel": "Gender",
+            "sourceParameters": {},
+            "style": "mySelectStyle",
+            "type": "select",
+            "value": "U",
+            "valueKey": "sex",
+            "valueStyle": "mySelectValueStyle"
+         },
+         {
+            "label": "",
+            "labelStyle": "myLiteralLabelStyle",
+            "name": "selectedSex",
+            "style": "myLiteralStyle",
+            "type": "literal",
+            "value": "<div> Selected sex is: $showSelect </div>",
+            "valueStyle": "myLiteralValueStyle"
+         },
+         {
+            "label": "Select Age",
+            "labelKey": "ageLabel",
+            "labelStyle": "myRadioLabelStyle",
+            "loadInitially": true,
+            "name": "showRadio",
+            "required": false,
+            "sourceModel": "Age",
+            "sourceParameters": {},
+            "style": "myRadioStyle",
+            "type": "radio",
+            "value": "C",
+            "valueKey": "age",
+            "valueStyle": "myRadioLabelStyle"
+         },
+         {
+            "name": "selectedAge",
+            "type": "literal",
+            "value": "<div>Selected age is: $showRadio</div>"
+         },
+         {
+            "label": "Select Department",
+            "labelKey": "DNAME",
+            "loadInitially": true,
+            "name": "deptRadio",
+            "required": false,
+            "sourceModel": "Dept",
+            "sourceParameters": {},
+            "type": "radio",
+            "value": "30",
+            "valueKey": "DEPTNO"
+         },
+         {
+            "name": "selectedDept",
+            "type": "literal",
+            "value": "<div>Selected department is: $deptRadio</div>"
+         },
+         {
+            "components": [
+               {
+                  "label": "Show Search Todo Form 1",
+                  "name": "showSearchTodo",
+                  "readonly": false,
+                  "type": "boolean"
+               },
+               {
+                  "label": "Show Edit Todos Form",
+                  "name": "showEditTodoList",
+                  "type": "boolean"
+               },
+               {
+                  "label": "Apply Changes",
+                  "name": "applyFormVisibilityChanges",
+                  "onClick": "$SearchTodo.$visible=$showSearchTodo; $EditTodoList.$visible = $showEditTodoList;",
+                  "type": "button"
+               }
+            ],
+            "label": "Search Forms to show",
+            "name": "SelectForm",
+            "nextButtonLabel": "Next",
+            "showInitially": true,
+            "type": "form"
+         },
+         {
+            "components": [
+               {
+                  "label": "Search Todo by index",
+                  "loadInitially": true,
+                  "name": "SelectedId",
+                  "onUpdate": "$SelectedTodoDesc.$load();",
+                  "parameters": {},
+                  "readonly": false,
+                  "required": false,
+                  "type": "text",
+                  "validation": {}
+               },
+               {
+                  "label": "Selected Todo Description:",
+                  "loadInitially": false,
+                  "model": "Todo.description",
+                  "name": "SelectedTodoDesc",
+                  "onError": "alert(response.data.errors[0].errorMessage);",
+                  "parameters": {
+                     "id": "Number(nvl($SelectedId,0))"
+                  },
+                  "readonly": false,
+                  "required": false,
+                  "type": "text",
+                  "validation": {}
+               }
+            ],
+            "label": "Search Todo",
+            "name": "SearchTodo",
+            "type": "form"
+         },
+         {
+            "components": [
+               {
+                  "label": "Is Complete",
+                  "loadInitially": true,
+                  "name": "filt_complete",
+                  "readonly": false,
+                  "type": "boolean",
+                  "value": false
+               },
+               {
+                  "label": "Apply Filter",
+                  "name": "apply_filt_complete",
+                  "onClick": "$EditTodo.$load();",
+                  "style": "new-line",
+                  "type": "button"
+               },
+               {
+                  "label": "Remove Filter",
+                  "name": "remove_filt_complete",
+                  "onClick": "$filt_complete=null; $EditTodo.$load();",
+                  "type": "button"
+               },
+               {
+                  "allowDelete": true,
+                  "allowModify": true,
+                  "allowNew": true,
+                  "allowReload": true,
+                  "components": [
+                     {
+                        "asHtml": false,
+                        "label": "Id",
+                        "loadInitially": true,
+                        "model": "id",
+                        "name": "editTodoId",
+                        "type": "display"
+                     },
+                     {
+                        "label": "Description",
+                        "loadInitially": true,
+                        "model": "description",
+                        "name": "editTodoDesc",
+                        "parameters": {},
+                        "readonly": false,
+                        "required": false,
+                        "type": "text",
+                        "validation": {}
+                     },
+                     {
+                        "label": "E-mail",
+                        "model": "email",
+                        "name": "email",
+                        "required": false,
+                        "type": "email"
+                     },
+                     {
+                        "label": "Is Complete",
+                        "loadInitially": true,
+                        "model": "complete",
+                        "name": "editTodoComplete",
+                        "readonly": false,
+                        "type": "boolean"
+                     }
+                  ],
+                  "loadInitially": true,
+                  "model": "Todo",
+                  "name": "EditTodo",
+                  "onClick": "console.log(currentSelection);",
+                  "pageSize": 5,
+                  "parameters": {
+                     "complete": "$filt_complete"
+                  },
+                  "type": "htable"
+               }
+            ],
+            "label": "Edit Todos",
+            "name": "EditTodoList",
+            "nextButtonLabel": "Next",
+            "showInitially": true,
+            "type": "form"
+         }
+      ],
+      "label": "Todo Page",
+      "name": "IAModeloPagina1",
+      "scriptingLanguage": "JavaScript",
+      "title": "Todo Master Detail page",
+      "type": "page"
+   },
+   "pageRoles": []
+}
